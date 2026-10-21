@@ -178,14 +178,6 @@
   .btn.solid { background: var(--teal); color: #fff; }
   .btn.ghost { border-color: var(--line); color: var(--ink); background: #fff; }
   .btn:hover { transform: translateY(-1px); }
-  .status {
-    margin-top: 22px;
-    color: var(--dim);
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-  }
-  .status b { color: var(--teal); font-weight: 500; }
 
   .plate {
     background: var(--plate);
@@ -382,7 +374,6 @@
 
   @media (max-width: 900px) {
     h1 .name { font-size: 8.2cqi; }
-    .status { letter-spacing: 0.02em; }
     .abstract, .cards, .method-grid, .stats, .trio { grid-template-columns: 1fr; columns: auto; }
     .abstract { columns: 1; }
     .menu-btn { display: inline-flex; }
@@ -449,7 +440,6 @@
       <a class="btn solid" href="paper.pdf">Read the paper</a>
       <a class="btn ghost" href="#demos">Watch 10 rollouts</a>
     </div>
-    <p class="status">PRIOR CHANNEL <b>ONLINE</b> &nbsp;·&nbsp; C-NCP &nbsp;·&nbsp; NEXT-STATE FORECAST</p>
   </div>
 
   <div class="wide hero-fig">
