@@ -273,7 +273,7 @@
   }
 
   .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 14px; }
-  .tabs button, .copy {
+  .tabs button {
     font: inherit;
     color: var(--ink);
     background: transparent;
@@ -359,21 +359,6 @@
     font-size: 12px;
     letter-spacing: 0.12em;
     color: var(--gold);
-  }
-  .bib {
-    background: var(--bg-2);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 16px;
-    overflow: auto;
-  }
-  pre {
-    margin: 0;
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: 13px;
-    line-height: 1.55;
-    color: #1c2a33;
-    white-space: pre-wrap;
   }
   footer {
     position: relative;
@@ -578,22 +563,6 @@
       <div class="trio" id="trio"></div>
     </div>
   </section>
-
-  <section id="bibtex">
-    <div class="wrap">
-      <p class="sec-kicker">04 — Citation</p>
-      <h2>BibTeX</h2>
-      <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
-        <button class="copy" type="button" id="copy-bib">Copy</button>
-      </div>
-      <div class="bib"><pre id="bib">@misc{li2027futureworld,
-  title={FutureWorld: A Plug-and-Play Causal Next-State Predictor for Interactive Video World Exploration},
-  author={Li, Guangyuan and Yao, Kelu and Xu, Shuolin and Yu, Xinlei and Xing, Wei and Zhao, Lei and Jiang, Peng-Tao and Xu, Xiaogang and Hu, Xiaobin},
-  year={2026},
-  note={ICLR 2027 submission}
-}</pre></div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -736,17 +705,6 @@ function renderDemos() {
 document.getElementById("demo-prev").addEventListener("click", () => { demoPage -= 1; renderDemos(); });
 document.getElementById("demo-next").addEventListener("click", () => { demoPage += 1; renderDemos(); });
 renderDemos();
-
-document.getElementById("copy-bib").addEventListener("click", async (event) => {
-  const text = document.getElementById("bib").textContent;
-  try {
-    await navigator.clipboard.writeText(text);
-    event.target.textContent = "Copied";
-  } catch (err) {
-    event.target.textContent = "Select to copy";
-  }
-  setTimeout(() => { event.target.textContent = "Copy"; }, 1600);
-});
 
 const box = document.getElementById("lightbox");
 document.getElementById("open-results").addEventListener("click", () => box.showModal());
